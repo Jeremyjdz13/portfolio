@@ -11,7 +11,7 @@ export default function MathSolver() {
             if (inputRef.current !== null) {
                 const problem = inputRef.current.value
                 const problemArray = problem.split("")
-                console.log(Math.floor(parseInt(problem)), "Problem")
+                console.log( ), "Problem")
                 checkForOrderOfOperation(problemArray)
             }
         } catch (error) {
