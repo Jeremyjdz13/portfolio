@@ -1,18 +1,19 @@
-import { useRef } from "react"
-import { checkForOrderOfOperation } from "./mathSolverLogic"
+import { useRef, useState } from "react"
+import { parse, Equation } from "./mathSolverLogic"
 
 export default function MathSolver() {
     const inputRef = useRef<HTMLInputElement>(null)
+    const [results, setResults] = useState<string>("")
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
         try {
             if (inputRef.current !== null) {
-                const problem = inputRef.current.value
-                const problemArray = problem.split("")
-                console.log( ), "Problem")
-                checkForOrderOfOperation(problemArray)
+                const equation: Equation = inputRef.current.value
+                const results = parse(equation)
+                
+                return setResults(results)
             }
         } catch (error) {
             console.log(error, "You have an error")
@@ -29,7 +30,9 @@ export default function MathSolver() {
                     <input ref={inputRef} type="text"/>
                     <button type="submit">Solve</button>
                 </form>
-                <div>This Math solver can solve for addition, subtraction, division, and multiplication. </div>
+                <div>This Math solver can solve for addition, subtraction, division, and multiplication.</div>
+                <div>For better results use a space between characters.</div>
+                <div>{results}</div>
             </div>
         </>
        
