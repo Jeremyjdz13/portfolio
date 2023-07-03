@@ -6,27 +6,19 @@ export const MenuContainer = styled.div`
   top: 0;
   left: 0;
   z-index: 999;
-  width: 100%;
+  width: 98%;
   max-height: 45px;
   display: flex;
   justify-content: space-between;
   backdrop-filter: blur(10px);
   border-bottom: hsl(206, 5%, 55%) solid 1px;
-  padding: 15px;
+  padding: clamp(5px, 2%, 15px);
   font-weight: bold;
-  font-size: 1.2em;
-
-  @media (max-width: 840px) {
-    font-size: .8em;
-  }
-
-  @media (max-width: 450px) {
-    font-size: .7em;
-  }
+  font-size: clamp(12px, 2vw, 20px);
 `
 export const StyledLink = styled(Link)`
   color: hsl(72,2%,85%);
-  margin: 10px;
+  margin: clamp(2.5px, .1%, 10px);
   &:focus, &:active {
     color: hsl(72,2%,100%);
   }

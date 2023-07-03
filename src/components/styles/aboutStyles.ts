@@ -30,12 +30,13 @@ export const ParagraphContainer = styled.div`
 export const ParagraphCard = styled.div`
     // background-color: hsla(0, 100%, 0%, .8);
     background-color: hsla(67, 100%, 99%, .7);
-    width: clamp(150px, 100%, 450px);
+    width: clamp(150px, 100%, 550px);
+    height: clamp(50px, 2, 130px);
     // color: hsl(206, 5%, 75%);
     color: hsla(0, 100%, 0%, .9);
-    font-size: 1.2em;
+    font-size: clamp(10px, 2vh, 18px);
     font-weight: bold;
-    padding: 15px;
+    padding: 10px;
     border-radius: 20px;
     text-align: justify;
     margin: 15px;

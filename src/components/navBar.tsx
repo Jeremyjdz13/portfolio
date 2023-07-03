@@ -1,7 +1,7 @@
 import {
     StyledLink,
     MenuContainer
-} from './navBarStyles'
+} from './styles/navBarStyles'
 
 export default function NavBar(){
 
@@ -12,11 +12,12 @@ export default function NavBar(){
     return (
         <MenuContainer>
             <div>
-              Jeremy Diaz
-            </div>
-            <div>
                 <span>Art</span>
                 <span>Code</span>
+                <span>Portfolio</span>
+            </div>
+            <div>
+              Jeremy Diaz
             </div>
             <div>
               <StyledLink to='/#home' onClick={() => handleScrollToView('home')}>Home</StyledLink>

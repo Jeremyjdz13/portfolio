@@ -1,35 +1,30 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-    display: grid;
-    grid-template-column: 40% 60%;
+    // display: grid;
+    // grid-template-column: 40% 60%;
+    // height: 100%;
     text-shadow: 2px 2px 1px hsl(206, 5%, 30%);
-    @media (max-width: 840px) {
-        padding: 5px;
-      }
 `
 export const TopContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     justify-items: right;
-    height: 50vh;
+    // height: 50vh;
     padding-inline: 30px;
-    padding-block: 50px 0px;
+    // padding-block: 50px 0px;
 `
 export const ParagraphCard = styled.div`
     margin-inline: auto 0px;  
-    font-size: clamp(14px, 5vw, 32px);
-    width: clamp(150px, 100%, 600px);
+    // width: clamp(200px, 40%, 600px);
     padding: 12px;
 `
 export const Paragraph = styled.div`
     font-weight: bold;
     text-align: justify;
-    @media (max-width: 840px) {
-        padding: 3px;
-        font-weight: normal;
-      }
+    font-size: clamp(16px, 2vw, 32px);
+   
 `
 export const Title = styled.div`
     display: flex;
@@ -40,6 +35,7 @@ export const Title = styled.div`
 `
 
 export const ContentContainer = styled.div`
-      height: 50vh;
+    backdrop-filter: blur(10px);
+    // height: 1;
 `
 

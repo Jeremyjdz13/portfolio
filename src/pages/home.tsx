@@ -6,8 +6,7 @@ import {
     TopContainer,
     ContentContainer
 } from './homeStyles'
-import {Route, Routes} from 'react-router-dom'
-import JSApps from './jsApps'
+ import JSApps from '../components/jsApps'
 
 export default function Home(){
     return (
@@ -22,9 +21,7 @@ export default function Home(){
                 </Title>
             </TopContainer>
             <ContentContainer>
-                <Routes>
-                    <Route path="/*" element={<JSApps />}/>
-                </Routes>
+                <JSApps />
             </ContentContainer>
         </Container>
     )
