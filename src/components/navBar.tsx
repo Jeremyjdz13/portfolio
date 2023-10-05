@@ -1,31 +1,59 @@
 import {
     StyledLink,
-    MenuContainer
+    NavContainer,
+    MetaContainer,
+    NameContainer,
+    IntraPageNavContainer,
+    MetaButtons
 } from './styles/navBarStyles'
 
+import { useLinkFocus } from '../hooks/useLinkFocus'
+
 export default function NavBar(){
+    const { isLinkFocused } = useLinkFocus()
+
 
     function handleScrollToView(id: string) {
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth'})
     }
 
     return (
-        <MenuContainer>
-            <div>
-                <span>Art</span>
-                <span>Code</span>
-                <span>Portfolio</span>
-            </div>
-            <div>
+        <NavContainer>
+            <MetaContainer>
+                <MetaButtons>Art</MetaButtons>
+                <MetaButtons>Code</MetaButtons>
+            </MetaContainer>
+            <NameContainer>
               Jeremy Diaz
-            </div>
-            <div>
-              <StyledLink to='/#home' onClick={() => handleScrollToView('home')}>Home</StyledLink>
-              <StyledLink to='/#about' onClick={() => handleScrollToView('about')}>About</StyledLink>
-              <StyledLink to='/#projects' onClick={() => handleScrollToView('projects')}>Projects</StyledLink>
-              <StyledLink to='/#contact' onClick={() => handleScrollToView('contact')}>Contact</StyledLink>
-              <StyledLink to='/#resume' onClick={() => handleScrollToView('resume')}>Resume</StyledLink>
-            </div>
-        </MenuContainer>
+            </NameContainer>
+            <IntraPageNavContainer>
+              <StyledLink 
+                to='/#home'
+                onClick={() => handleScrollToView('home')}
+                isLinkFocused={isLinkFocused === "home"}
+                >Home</StyledLink>
+              <StyledLink
+                to='/#about' 
+                onClick={() => handleScrollToView('about')}
+                isLinkFocused={isLinkFocused === "about"}
+              >About</StyledLink>
+              <StyledLink 
+                to='/#projects'
+                onClick={() => handleScrollToView('projects')}
+                isLinkFocused={isLinkFocused === "projects"}
+                >Projects</StyledLink>
+              <StyledLink 
+                to='/#contact' 
+                onClick={() => handleScrollToView('contact')}
+                isLinkFocused={isLinkFocused === "contact"}
+
+                >Contact</StyledLink>
+              <StyledLink 
+                to='/#resume' 
+                onClick={() => handleScrollToView('resume')}
+                isLinkFocused={isLinkFocused === "resume"}
+              >Resume</StyledLink>
+            </IntraPageNavContainer>
+        </NavContainer>
     )
 }

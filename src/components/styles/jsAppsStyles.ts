@@ -6,9 +6,8 @@ interface AppCardProps {
 
 export const Container = styled.div`
     background-color: hsla(0, 100%, 0%, .5);
-    border: 1px solid green;
     display: grid;
-    // grid-template-row: 20% 70%;
+    grid-template-rows: 20% 80%;
     place-items: center;
     height: 100%;
     margin: 0;
@@ -16,25 +15,26 @@ export const Container = styled.div`
 export const TitleContainer = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     height: 100%;
     width: 100%;
-    border: 1px solid blue;
 `
 export const Title = styled.span`
-    font-size: 32px;
+    font-size: clamp(18px, 2vw, 32px);
     font-weight: bold;
 `
 export const ScrollAppsContainer = styled.div`
-    display: flex;
-    border: 1px solid red;
-    justify-content: center;
-    align-items: top;
-    height: 100%;
-    width: clamp(150px, 70%, 600px);
-    overflow-x: auto;
-    // overflow-y: hidden;
+    position: relative;
+    height: clamp(100px, 100%, 150px);
+    width: clamp(150px, 100%, 590px);
+    border-radius: 20px;
+    padding-block: 20px;
+    padding-inline: 10px 0px;
+    overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    // border: 1px solid red;
     @scroll-timeline element-move {
         source: auto;
         orientation: vertical;
@@ -42,18 +42,48 @@ export const ScrollAppsContainer = styled.div`
     }
 `
 export const AppCard = styled.div<AppCardProps>`
-    // opacity: 0;
-    transition: opacity 0.3s ease-in-out; 
     display: inline-block;
+    text-align: center;
+    line-height: 125px;
     background-color: hsla(0, 100%, 0%, .5);
-    min-width: 150px;
-    min-height: 150px
+    border-radius: 20px;
+    // border: green 1px solid;
+    min-height: 125px;
+    min-width: 125px;
     margin-inline: 10px;
-    ${(props) => 
-        props.show &&
-        css`
-            opacity: 1;
-        `
-    };
-
 `
+export const ScrollArrows = styled.div`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+`
+export const ScrollArrowLeft = styled.div`
+    pointer-events: auto;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+`
+export const ScrollArrowRight = styled.div`
+    pointer-events: auto;
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+` 

@@ -13,6 +13,7 @@ import NavBar from './components/navBar.tsx'
 import About from './components/about.tsx'
 import Projects from './components/projects.tsx'
 import Contact from './components/contact.tsx'
+import { Resume } from './components/resume.tsx'
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
   useHandleBackgrounds({ sections, screenWidth })
 
   return (
-    <AppContainer> 
+    <AppContainer>
       <NavBar />
       <Section 
         ref={homeRef} 
@@ -43,28 +44,28 @@ function App() {
         id="about"
         // className={visibleSection === 'about' ? 'fade-in visible' : 'fade-in'}
         >
-        {/* <About /> */}
+        <About />
       </Section>
       <Section 
         ref={projectsRef} 
         id="projects"
         // className={visibleSection === 'projects' ? 'fade-in visible' : 'fade-in'}
         >
-          {/* <Projects /> */}
+          <Projects />
       </Section>
       <Section 
         ref={contactRef} 
         id="contact"
         // className={visibleSection === 'contact' ? 'fade-in visible' : 'fade-in'}
         >
-        {/* <Contact /> */}
+        <Contact />
       </Section>
       <Section 
         ref={resumeRef} 
         id="resume"
         // className={visibleSection === 'resume' ? 'fade-in visible' : 'fade-in'}
         >
-        <h1>Resume</h1>
+        <Resume />
       </Section>
     </AppContainer>
   )

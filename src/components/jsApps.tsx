@@ -2,6 +2,9 @@ import {
     AppCard, 
     Container, 
     ScrollAppsContainer, 
+    ScrollArrowLeft, 
+    ScrollArrowRight, 
+    ScrollArrows, 
     Title, 
     TitleContainer
 } from "./styles/jsAppsStyles"
@@ -56,12 +59,20 @@ export default function JSApps() {
                 <AppCard className="hidden">App 3</AppCard>
                 <AppCard className="hidden">App 4</AppCard>
                 <AppCard className="hidden">App 5</AppCard>
-                <AppCard className="hidden">App 1</AppCard>
-                <AppCard className="hidden">App 2</AppCard>
-                <AppCard className="hidden">App 3</AppCard>
-                <AppCard className="hidden">App 4</AppCard>
-                <AppCard className="hidden">App 5</AppCard>
+                <AppCard className="hidden">App 6</AppCard>
+                <AppCard className="hidden">App 7</AppCard>
+                <AppCard className="hidden">App 8</AppCard>
+                <AppCard className="hidden">App 9</AppCard>
+                <AppCard className="hidden">App 10</AppCard>
             </ScrollAppsContainer>
+            <ScrollArrows>
+                <ScrollArrowLeft>
+                    &lt;
+                </ScrollArrowLeft>
+                <ScrollArrowRight>
+                    &gt;
+                </ScrollArrowRight>
+            </ScrollArrows>
         </Container>
     )
 }

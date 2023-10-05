@@ -14,7 +14,7 @@ export const ParagraphContainer = styled.div`
     align-items: left;
     padding: 30px 0px;
 `
-export const ParagraphCard = styled.div`
+export const ParagraphCard = styled.p`
     background-color: hsla(0, 100%, 0%, .1);
     // background-color: hsla(67, 100%, 99%, .9);
     width: clamp(150px, 100%, 450px);
@@ -24,7 +24,7 @@ export const ParagraphCard = styled.div`
     font-weight: bold;
     padding: 15px;
     border-radius: 20px;
-    text-align: justify;
+    text-align: left;
     margin: 15px;
 
 `
@@ -36,7 +36,6 @@ export const OrderListContainer = styled.div`
     font-weight: bold;
     padding: 15px;
     border-radius: 20px;
-    text-align: justify;
     margin: 15px;
 
 `
